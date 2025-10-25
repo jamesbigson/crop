@@ -1,0 +1,194 @@
+#Questions_Block {
+  padding: 2vh 10vh 2vh 10vh;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 8vh;
+  width: 100%;
+  height: 97vh;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+#Ask_Questions {
+  display: flex;
+  flex-direction: column;
+}
+
+#Ask_Questions h2 {
+  font-size: 2em;
+  margin-bottom: 2vh;
+}
+
+#Ask_Questions p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.3em;
+  color: #4c4a4a;
+  width: 65vh;
+  margin-bottom: 4vh;
+  line-height: 1.5;
+}
+
+.custom-line {
+  border: none;
+  height: 1.5px;
+  background-color: gainsboro;
+  margin: 20px 0;
+  width: 100%;
+}
+
+#Questions_Asked {
+  display: flex;
+  flex-direction: column;
+  margin-top: 13vh;
+}
+
+.Question {
+  display: flex;
+  flex-direction: column;
+}
+
+.Question h4 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 1.5vh;
+}
+
+.Question p {
+  width: 60vh;
+  text-align: justify;
+}
+
+/* --- Form Styling --- */
+#Ask_Questions form {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 65vh;
+}
+
+#Ask_Questions label {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #333;
+}
+
+#Ask_Questions input,
+#Ask_Questions textarea {
+  padding: 1.2vh 1vw;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#Ask_Questions input:focus,
+#Ask_Questions textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+}
+
+#Ask_Questions textarea {
+  resize: vertical;
+  min-height: 10vh;
+}
+
+/* --- Button Styling --- */
+#Ask_Questions button {
+  margin-top: 2vh;
+  padding: 1.2vh 2vw;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  align-self: flex-start; /* keeps button aligned with form fields */
+}
+
+#Ask_Questions button:hover {
+  background-color: #388e3c;
+  transform: scale(1.03);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  #Questions_Block {
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 5vw;
+    height: auto;
+  }
+
+  #Ask_Questions,
+  #Questions_Asked {
+    align-items: center;
+    text-align: left;
+  }
+
+  #Ask_Questions p,
+  #Ask_Questions form,
+  .Question p {
+    width: 90%;
+  }
+
+  #Questions_Asked {
+    margin-top: 8vh;
+  }
+}
+
+@media (max-width: 600px) {
+  #Questions_Block {
+    padding: 4vh 4vw;
+    gap: 6vh;
+    height: auto;
+  }
+
+  #Ask_Questions h2 {
+    font-size: 1.6em;
+    text-align: left;
+  }
+
+  #Ask_Questions p {
+    font-size: 1.1em;
+    width: 100%;
+  }
+
+  #Ask_Questions form {
+    width: 100%;
+  }
+
+  .Question p {
+    width: 100%;
+  }
+
+  #Ask_Questions button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 0.5em;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star.filled {
+  color: gold;
+}

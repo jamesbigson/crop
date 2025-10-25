@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+.HeadBody {
+  padding: 2vh;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #e0ef7d;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  border-radius: 2vh;
+}
+
+.HeadBody h1 {
+  font-weight: 500;
+  font-size: 1.7em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#Navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1vh;
+  margin-bottom: 1vh;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2em;
+  transition: 0.2s ease;
+  width: 11vh;
+  height: 5vh;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link:hover {
+  background-color: whitesmoke;
+}
+
+.start_buttons {
+  width: 20vh;
+  height: 7vh;
+  border-radius: 2vh;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.start_buttons:hover{
+  background-color: white;
+  color: black;
+}
+
+#About {
+  display: flex;
+  margin: 5vh 0 5vh 5vh;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2em;
+  text-align: justify;
+  line-height: 1.6; /* adds space between lines */
+  justify-self: center;
+}
+
+
+/* ---------- Hero Section ---------- */
+#Hero {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding: 0 2vh;
+}
+
+#Hero h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  text-shadow: 10px 10px 10px black;
+}
+
+.Hero_button {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  gap: 5vh;
+}
+
+.Hero_button button {
+  width: 18vh;
+  height: 7vh;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 2vh;
+  font-size: 1em;
+  transition: 0.2s ease background-color, color;
+  cursor: pointer;
+}
+
+.Hero_button button:hover {
+  background-color: #e0ef7d;
+  color: black;
+}
+
+.Back_img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2vh;
+}
+
+/* ---------- Grow Section ---------- */
+#Grow {
+  height: auto;
+  padding: 9vh 2vh;
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#Grow h1 {
+  margin-bottom: 7vh;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+#Grow_body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 8vh;
+}
+
+.Grow_item {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(161, 159, 159);
+  height: 35vh;
+  width: 70vh;
+  border-radius: 2vh;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 0 6vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: 0.2s ease transform;
+}
+
+.Grow_item:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.Grow_item h3 {
+  margin-bottom: 2vh;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  #Hero h1 {
+    font-size: 3em;
+  }
+
+  .Hero_button {
+    flex-direction: column;
+    gap: 3vh;
+  }
+
+  .Grow_item {
+    width: 60vh;
+    height: auto;
+    padding: 4vh;
+  }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .HeadBody {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #Navigation {
+    justify-content: center;
+    gap: 2vh;
+  }
+
+  #Hero h1 {
+    font-size: 2.3em;
+  }
+
+  .Hero_button {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  #Grow_body {
+    grid-template-columns: 1fr;
+  }
+
+  .Grow_item {
+    width: 90%;
+    height: auto;
+    padding: 3vh;
+  }
+}
+
+/* Small phones (up to 480px) */
+@media (max-width: 480px) {
+  #Hero h1 {
+    font-size: 1.8em;
+  }
+
+  .Hero_button button {
+    width: 16vh;
+    height: 6vh;
+    font-size: 0.9em;
+  }
+
+  #Grow h1 {
+    font-size: 1.8em;
+  }
+
+  .Grow_item h3 {
+    font-size: 1.2em;
+  }
+
+  .link {
+    width: auto;
+    padding: 1vh 2vh;
+    font-size: 1em;
+  }
+}
+
+
+
+
+/* ---------- Main Container ---------- */
+/* ---------- Page Background ---------- */
+body {
+  background: linear-gradient(120deg, #e8f5e9, #f9fbe7);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Main Container ---------- */
+#Predict_Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  width: 60%;
+  max-width: 1200px;
+  margin: 6vh auto;
+  padding: 3vh 1vh;
+  border-radius: 2vh;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  min-height: 80vh; /* ensures vertical centering */
+}
+
+/* ---------- Header ---------- */
+#Predict_Head {
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 4vh;
+  font-weight: bold;
+}
+
+/* ---------- Body ---------- */
+.Predict_Body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ---------- Form Layout ---------- */
+.Predict_Body form {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3vh 2vw;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Individual Form Fields ---------- */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.Form_label {
+  font-size: 1em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0.5vh;
+  text-align: center;
+}
+
+/* ---------- Inputs & Selects ---------- */
+.Form_Input {
+  width: 100%;
+  padding: 0.8vh 1vh;
+  height: 6.5vh;
+  border: 1px solid #dad8d8;
+  border-radius: 2vh;
+  font-size: 1em;
+  outline: none;
+  background-color: rgb(247, 247, 238);
+  transition: all 0.3s ease;
+}
+
+.Form_Input:hover {
+  background-color: #f5f5ef;
+}
+
+.Form_Input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+  background-color: #fff;
+}
+
+/* ---------- Styled Dropdown (Select) ---------- */
+select.Form_Input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: rgb(247, 247, 238)
+    url("data:image/svg+xml,%3Csvg fill='%23000' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")
+    no-repeat right 1rem center;
+  background-size: 1rem;
+  cursor: pointer;
+}
+
+select.Form_Input option {
+  background-color: #fff;
+  color: #333;
+  font-size: 1em;
+  padding: 8px;
+}
+
+/* ---------- Button ---------- */
+.form-full {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.start_button {
+  width: 20vh;
+  max-width: 200px;
+  height: 7vh;
+  border-radius: 2vh;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.start_button:hover {
+  background-color: #e0ef7d;
+  color: black;
+  transform: scale(1.05);
+}
+
+.start_button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* ---------- Rainfall Info Text ---------- */
+.Predict_Body p {
+  margin-top: 3vh;
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  #Predict_Head {
+    font-size: 2.2em;
+  }
+
+  .Predict_Body form {
+    grid-template-columns: 1fr;
+    gap: 3vh;
+  }
+
+  .Form_Input {
+    max-width: 100%;
+  }
+
+  .form-full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  #Predict_Container {
+    width: 95%;
+    padding: 4vh 2vh;
+  }
+
+  #Predict_Head {
+    font-size: 2em;
+  }
+
+  .Predict_Body form {
+    width: 100%;
+  }
+
+  .Form_Input {
+    width: 100%;
+  }
+
+  .start_button {
+    width: 18vh;
+    height: 6vh;
+    font-size: 0.9em;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  #Predict_Head {
+    font-size: 1.7em;
+  }
+
+  .form-field {
+    max-width: 90%;
+  }
+
+  .Form_label {
+    font-size: 0.9em;
+  }
+
+  .Form_Input {
+    font-size: 0.9em;
+    height: 4.5vh;
+  }
+
+  .start_button {
+    width: 16vh;
+    height: 5.5vh;
+    font-size: 0.9em;
+  }
+}
+
+
+
+
+
+
+/* Container centering */
+.sign-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f6fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Sign box styling */
+.sign-box {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+}
+
+.sign-box h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Input and select styling */
+.sign-box form input,
+.sign-box form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.sign-box button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 15px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-box button:hover {
+  background-color: #45a049;
+}
+
+/* Google button styling */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  gap: 10px;
+}
+
+.google-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+}
+
+/* Divider */
+.divider {
+  margin: 20px 0;
+  font-weight: bold;
+  color: #888;
+}
+
+/* Signup/login text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-text a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .sign-box {
+    padding: 30px 20px;
+    width: 95%;
+  }
+}
+
+
+/* ---------- Season Dropdown Styling ---------- */
+.season-select {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* On tablet, make sure it stays centered and fits */
+@media (max-width: 1024px) {
+  .season-select {
+    max-width: 90%;
+  }
+}
+
+/* On mobile screens */
+@media (max-width: 768px) {
+  .season-select {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    position: static;
+  }
+}
+
+/* On very small phones */
+@media (max-width: 480px) {
+  .season-select {
+    font-size: 0.9em;
+    height: 5.5vh;
+  }
+}
+
