@@ -9,6 +9,7 @@ import SignUp from './Components/SignUp.jsx';
 import ResultPage from './Components/ResultPage.jsx';
 import ProtectedRoute from './Components/ProtectedRoute.jsx';
 import Pesticide from './Components/Pesticide.jsx';
+import UploadBox from './Components/UploadBox.js';
 
 // Layout with header
 function LayoutWithHeader() {
@@ -31,7 +32,8 @@ root.render(
         {/* <Route path='/Yeild' element={<YieldPrediction/>} /> */}
         <Route path='/About' element={<About />} />
         <Route path='/Result' element={<ResultPage />} />
-        <Route path='/Pest' element={<Pesticide/>}/>
+        {/* <Route path='/Pest' element={<Pesticide/>}/> */}
+        <Route path='/Pest' element={<UploadBox/>}/>
       </Route>
 
       {/* pages without header */}
