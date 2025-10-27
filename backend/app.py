@@ -29,12 +29,10 @@ mysql = MySQL(app)
 model = joblib.load('crop_yield_model.joblib')
 
 load_dotenv()
+# gemini_api_key = os.getenv('GOOGLE_API_KEY')
 
-# Configure the API (you may also choose to load the API key from the environment)
-# genai.configure(api_key='AIzaSyB0zxlzaUXGX_En1vCLspnZXFq9waUL4a8') 
-# backuo api
 
-genai.configure(api_key='AIzaSyB0zxlzaUXGX_En1vCLspnZXFq9waUL4a8')
+genai.configure(api_key="AIzaSyCPdsiYh1KeKHbej8VW7HmmCVnd5vABLn8")
 
 # Generation configuration for the Gemini model
 generation_config = {
