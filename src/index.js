@@ -9,7 +9,7 @@ import SignUp from './Components/SignUp.jsx';
 import ResultPage from './Components/ResultPage.jsx';
 import ProtectedRoute from './Components/ProtectedRoute.jsx';
 import Pesticide from './Components/Pesticide.jsx';
-import UploadBox from './Components/UploadBox.js';
+import UploadBox from './Components/FertiCheck.js';
 
 // Layout with header
 function LayoutWithHeader() {
@@ -28,8 +28,8 @@ root.render(
       {/* pages with header */}
       <Route element={<LayoutWithHeader />}>
         <Route path='/' element={<App />} />
-        <Route path='/Yeild' element={<ProtectedRoute><YieldPrediction/></ProtectedRoute>} />
-        {/* <Route path='/Yeild' element={<YieldPrediction/>} /> */}
+        {/* <Route path='/Yeild' element={<ProtectedRoute><YieldPrediction/></ProtectedRoute>} /> */}
+        <Route path='/Yeild' element={<YieldPrediction/>} />
         <Route path='/About' element={<About />} />
         <Route path='/Result' element={<ResultPage />} />
         {/* <Route path='/Pest' element={<Pesticide/>}/> */}

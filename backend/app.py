@@ -162,26 +162,50 @@ def summarize_text(text):
             {
                 "role": "user",
                 "parts": [
-                    '''You are an expert at reading pesticide labels for farmers. When given the pesticide label text (which will be supplied after this instruction), return a single short English sentence in this exact style:
+                    '''You are an expert at reading fertilizer labels for farmers. When given the fertilizer label text (which will be supplied after this instruction), return a bilingual (English + Tamil) summary in bullet points — detailed but still short and clear.
 
-    "<PRODUCT NAME> is used on <crop(s)> to control <pest(s) or purpose>."
+🧾 Output Format:
+First provide 4–6 bullet points in English.
+Then provide the same 4–6 bullet points in Tamil immediately below.
 
-    Immediately on the next line, provide a Tamil translation that conveys the same meaning (one short sentence). Return plain text only — no JSON, no markdown, no extra commentary, and no additional sentences.
+Each point should be concise, clear, and factual.
 
-    output rules:
-    -explain in two lines only as specified above.
-    -Use simple words and short sentences.
-    -explain only the name of the product, crops it is used on, and pests or purpose. and ignore the rest of the information.
-    - First provide a very short summary in English (2–4 short sentences). Use simple words and short sentences. Mention key risks, basic safe handling actions, required PPE if present, and one-line emergency action.
-- Immediately after the English summary, provide the Tamil translation conveying the same meaning and tone (also 2–4 short sentences) using everyday Tamil suitable for farmers.
-- Do not include greetings, introductions, numbered lists, or external links unless explicitly requested.
-- Provide a separate explanation in must English first, followed by Tamil.
+🪴 English points must include:
+• Product name and fertilizer type (e.g., liquid, micronutrient, NPK, organic, etc.)  
+• Key nutrients and their percentages (if available)  
+• Purpose or benefits (e.g., corrects zinc deficiency, improves flowering, increases yield, etc.)  
+• Crops it is used for  
+• Method of application (e.g., foliar spray, soil application, drip, etc.)  
+• Any dosage or dilution rate mentioned  
+• Basic safety, storage, or handling advice  
 
-    Example output:
-    Katyayani BHASAM BEAUVERIA BASSIANA is used on rice crops to control insect pests.
-    கத்தியானி பகசம் BEAUVERIA BASSIANA அரிசி பயிர்களில் பூச்சிகளை கட்டுப்படுத்த பயன்படுத்தப்படுகிறது.
+🌾 Tamil points should be clear farmer-language translations of the English content (not literal, but natural).
 
-    Now analyze the following label text and produce the two-line bilingual description as specified.'''
+⚙️ Output rules:
+- Return plain text only (no markdown, no numbering, no JSON).  
+- Avoid introductions, commentary, or product marketing slogans.  
+- Use short and easy sentences for both languages.  
+- Focus only on use, nutrients, benefits, and safety.  
+- Do invent any details not present in the label text.
+
+✅ Example output:
+
+English:
+• Katyayani Growth Plus is a liquid NPK fertilizer used for paddy, cotton, and vegetables.  
+• It provides Nitrogen, Phosphorus, and Potassium for better root and shoot growth.  
+• Helps improve flowering, fruit setting, and overall yield.  
+• Apply 2–3 ml per liter of water as foliar spray.  
+• Store in a cool, dry place away from sunlight.  
+
+தமிழ்:
+• கத்தியானி கிரோத் பிளஸ் என்பது நைட்ரஜன், பாஸ்பரஸ் மற்றும் பொட்டாசியம் கொண்ட திரவ NPK உரம்.  
+• இது அரிசி, பருத்தி, காய்கறி பயிர்களில் பயன்படுத்தப்படுகிறது.  
+• வேர்களின் வளர்ச்சியும், பூப்போக்கையும், விளைச்சலையும் அதிகரிக்க உதவுகிறது.  
+• ஒரு லிட்டர் நீரில் 2–3 மில்லி சேர்த்து தெளிக்கவும்.  
+• குளிர்ச்சியான, உலர் இடத்தில் சேமிக்கவும், நேரடி வெயிலில் வைக்க வேண்டாம்.
+
+Now analyze the following fertilizer label text and produce the bilingual bullet-point summary as specified.'''
+
                 ],
             },
         ],

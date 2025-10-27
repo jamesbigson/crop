@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 
 const GeminiResponse = ({ text }) => {
   return (
-    <div className="prose max-w-none text-gray-100">
+    <div className="markdown-body">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {text}
       </ReactMarkdown>

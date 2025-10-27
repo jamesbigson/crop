@@ -1,0 +1,216 @@
+/* FertiCheck component styles - match site theme and be mobile responsive */
+
+.summarizer-container {
+  padding: 2rem 1rem;
+}
+
+.summarizer-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  /* Keep the card from shrinking too narrow on wide screens and center it */
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.summarizer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.summarizer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f3a13; /* dark green-ish */
+  margin-bottom: 0.25rem;
+}
+
+.summarizer-sub {
+  color: #556b2f;
+  font-size: 0.95rem;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.file-row input[type="file"] {
+  flex: 1 1 auto; /* allow shrinking */
+  min-width: 0; /* allow ellipsis */
+  max-width: 300px;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  background: #fbfbf8;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.summarize-btn {
+  background: #1f3a13;
+  color: white;
+  border: none;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  flex: 0 0 auto; /* don't stretch */
+  min-width: 110px;
+  max-width: 40%;
+  box-sizing: border-box;
+}
+
+.summarize-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.summarize-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  background-color: #2b5b1a;
+}
+
+.summary-card {
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.summary-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #2b5b1a;
+  margin-bottom: 0.6rem;
+}
+
+.pin-icon {
+  font-size: 1.1rem;
+}
+
+.markdown-body {
+  color: #222;
+  line-height: 1.6;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+/* Make GeminiResponse content easy to read */
+.markdown-body p {
+  margin: 0.5rem 0;
+}
+
+/* Larger devices - center card width */
+@media (min-width: 992px) {
+  .summarizer-card {
+    padding: 1.6rem 2rem;
+    /* Ensure a stable desktop width */
+    width: 920px;
+  }
+  .file-row input[type="file"] {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .summarizer-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .file-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  /* keep some fixed space for the button, let input use remaining */
+  .file-row input[type="file"] {
+    flex: 1 1 auto;
+    max-width: calc(100% - 120px);
+  }
+  .summarize-btn {
+    width: 120px;
+  }
+  .summarizer-title {
+    font-size: 1.05rem;
+  }
+  .markdown-body {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack input and button on very small screens to avoid overflow */
+  .file-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+  .file-row input[type="file"] {
+    max-width: 100%;
+    width: 100%;
+  }
+  .summarize-btn {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.98rem;
+  }
+  .summary-card {
+    padding: 0.8rem;
+  }
+}
+
+/* Utility alignments */
+.w-1200 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style for the file input button */
+/* Style for the file input button to match site theme */
+input[type="file"]::file-selector-button {
+  cursor: pointer;
+  background-color: #1f3a13; /* dark green to match site */
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.15s ease, transform 0.12s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #275219; /* slightly lighter on hover */
+  transform: translateY(-1px);
+}
+
+/* Focus/active states for accessibility */
+input[type="file"]::file-selector-button:active,
+input[type="file"]::file-selector-button:focus {
+  outline: 2px solid rgba(47, 79, 15, 0.18);
+  outline-offset: 2px;
+}
+
+/* On very small screens ensure the selector button doesn't overflow */
+@media (max-width: 480px) {
+  input[type="file"]::file-selector-button {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.95rem;
+  }
+}
