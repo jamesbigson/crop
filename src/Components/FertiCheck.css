@@ -86,9 +86,10 @@
   margin-top: 1.5rem;
   background: #fff;
   border-radius: 12px;
-  padding: 1rem 1.2rem;
+  /* padding: 1rem 1.2rem; */
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2rem;
 }
 
 .summary-heading {
@@ -171,7 +172,8 @@
     font-size: 0.98rem;
   }
   .summary-card {
-    padding: 0.8rem;
+    padding: 1.2rem;
+    margin: 15px;
   }
 }
 
