@@ -21,6 +21,7 @@
   font-weight: 500;
   font-size: 1.7em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0 4vh 0 0;
 }
 
 #Navigation {
@@ -36,18 +37,47 @@
   color: black;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.2em;
-  transition: 0.2s ease;
+  transition: all 0.3s ease;
   width: 11vh;
   height: 5vh;
   border-radius: 1vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 0 0 0;
 }
 
 .link:hover {
   background-color: whitesmoke;
 }
+
+/* ✅ Tamil language active */
+body.ta .link {
+  font-size: 1.2em;
+  width: 34vh;
+  height: 6vh;
+}
+
+body.ta .link:hover {
+  background-color: #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+
+/* Optional: Language toggle button styling */
+.lang-toggle {
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.lang-toggle:hover {
+  background-color: #f2f2f2;
+}
+
 
 .start_buttons {
   width: 20vh;
@@ -647,3 +677,53 @@ select.Form_Input option {
   }
 }
 
+/* --- Language Toggle Button --- */
+button {
+  min-width: 160px; /* Ensures space for Tamil text */
+  white-space: nowrap;
+}
+
+/* For the toggle button in Tamil */
+.lang_button {
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.lang_button:hover {
+  background-color: #f5f5f5;
+}
+
+
+/* Prevent text shifting in form labels and buttons */
+.Form_label,
+button,
+.link {
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+/* Ensure Tamil text doesn’t overflow on smaller screens */
+@media (max-width: 768px) {
+  button,
+  .lang-toggle,
+  .Form_label {
+    min-width: 130px;
+    font-size: 0.95em;
+    padding: 8px 10px;
+  }
+}
+
+/* Center text neatly even with long Tamil words */
+h1, h2, h3, label, button {
+  text-align: center;
+  line-height: 1.4;
+}
